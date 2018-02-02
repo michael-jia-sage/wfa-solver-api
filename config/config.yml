@@ -1,0 +1,12 @@
+default: &default
+  wfa_api_url: http://api.wolframalpha.com/v2/
+  wfa_app_id: R7PEXH-AAXHK4RTYT
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
