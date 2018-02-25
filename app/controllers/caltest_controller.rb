@@ -6,14 +6,22 @@ class CaltestController < ApplicationController
 
   # POST /caltest
   def create
-    response = RestClient::Request.execute(
-      method: :get,
-      url: "#{APP_CONFIG['wfa_api_url']}#{cal_query_string}"
-    )
-    json_response(Hash.from_xml(response).to_json)
+   unless valid_query_type(params['qtype'])
+     return json_response({:response => 'Query type is not acceptable' }, 406)
+   end
+
+   response = RestClient::Request.execute(
+     method: :get,
+     url: "#{APP_CONFIG['wfa_api_url']}#{cal_query_string}"
+   )
+   json_response(Hash.from_xml(response).to_json)
   end
 
   private
+
+  def valid_query_type(qtype)
+    %w(constant equation).include?(qtype)
+  end
 
   def caltest_params
     # whitelist params
@@ -27,7 +35,7 @@ class CaltestController < ApplicationController
   end
 
   def cal_input
-    'pi'
+    params[:qparams]
   end
 
   def cal_assumption
