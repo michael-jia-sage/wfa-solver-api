@@ -4,4 +4,5 @@ end
 # config/routes.rb
 Rails.application.routes.draw do
   resources :caltest
+  resources :solve
 end
