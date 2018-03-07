@@ -57,7 +57,28 @@ class SolveController < ApplicationController
     error = qresult["error"] == 'true'
     return { error: true, message: qresult["message"] } if error
 
-    hash_res.to_json
+    solutions = qresult['pod'].find { |s| s['title'].include?('Solution') }
+    if solutions
+      subpod = solutions['subpod']
+      real_roots = subpod.is_a?(Hash) ? [subpod['plaintext']] : subpod.map { |s| s['plaintext'] }
+      return { error: false, real_roots: real_roots }
+    end
+
+    real_solutions = qresult['pod'].find { |s| s['title'].include?('Real solution') }
+    if real_solutions
+      subpod = real_solutions['subpod']
+      real_roots = subpod.is_a?(Hash) ? [subpod['plaintext']] : subpod.map { |s| s['plaintext'] }
+    else
+      real_roots = nil
+    end
+    complex_solutions = qresult['pod'].find { |s| s['title'].include?('Complex solution') }
+    if complex_solutions
+      subpod = complex_solutions['subpod']
+      complex_roots = subpod.is_a?(Hash) ? [subpod['plaintext']] : subpod.map { |s| s['plaintext'] }
+    else
+      complex_roots = nil
+    end
+    { error: false, real_roots: real_roots, complex_roots: complex_roots }
   end
 
 end
