@@ -35,16 +35,10 @@ RSpec.describe 'Solve API', type: :request do
       before { post '/solve', params: valid_attributes }
 
       it 'returns correct results' do
-        qr = json['queryresult']
-        expect(qr['success']).to eq('true')
-        qr_pod = qr['pod']
-        expect(qr_pod.count).to be >= 4
-        expect(qr_pod[0]['title']).to eq('Input')
-        expect(qr_pod[0]['subpod']['plaintext']).to eq('x^2 + 20 x = 0')
-        expect(qr_pod.find {|s| s['title'].include?('Alternate forms') }).not_to be_nil
-        expect(qr_pod.find {|s| s['title'].include?('Solutions') }).not_to be_nil
-        expect(qr_pod.find {|s| s['title'].include?('Solutions') }['subpod'].count).to eq(2)
-        expect(qr_pod.find {|s| s['title'].include?('Complex solutions') }).to be_nil
+        expect(json['error']).to be_falsy
+        expect(json['real_roots'].count).to eq(2)
+        expect(json['real_roots'][0]).to eq('x = -20')
+        expect(json['real_roots'][1]).to eq('x = 0')
       end
     end
 
@@ -53,14 +47,9 @@ RSpec.describe 'Solve API', type: :request do
       before { post '/solve', params: valid_attributes }
 
       it 'returns correct results' do
-        qr = json['queryresult']
-        expect(qr['success']).to eq('true')
-        qr_pod = qr['pod']
-        expect(qr_pod.count).to be >= 4
-        expect(qr_pod[0]['title']).to eq('Input')
-        expect(qr_pod[0]['subpod']['plaintext']).to eq('19 x^3 - 73 x^2 + 7 x = 10')
-        expect(qr_pod.find {|s| s['title'].include?('Real solution') }).not_to be_nil
-        expect(qr_pod.find {|s| s['title'].include?('Complex solutions') }).not_to be_nil
+        expect(json['error']).to be_falsy
+        expect(json['real_roots'].count).to eq(1)
+        expect(json['complex_roots'].count).to eq(2)
       end
     end
 
@@ -69,16 +58,12 @@ RSpec.describe 'Solve API', type: :request do
       before { post '/solve', params: valid_attributes }
 
       it 'returns correct results' do
-        qr = json['queryresult']
-        expect(qr['success']).to eq('true')
-        qr_pod = qr['pod']
-        expect(qr_pod.count).to be >= 4
-        expect(qr_pod[0]['title']).to eq('Input')
-        expect(qr_pod[0]['subpod']['plaintext']).to eq('{x^2 + 2 x y + y^2 - 100 = 0, x^2 - 2 x y + y^2 - 25 = 0}')
-        expect(qr_pod.find {|s| s['title'].include?('Alternate forms') }).not_to be_nil
-        expect(qr_pod.find {|s| s['title'].include?('Solutions') }).not_to be_nil
-        expect(qr_pod.find {|s| s['title'].include?('Solutions') }['subpod'].count).to eq(4)
-        expect(qr_pod.find {|s| s['title'].include?('Complex solutions') }).to be_nil
+        expect(json['error']).to be_falsy
+        expect(json['real_roots'].count).to eq(4)
+        expect(json['real_roots'][0]).to eq('x = -15/2,   y = -5/2')
+        expect(json['real_roots'][1]).to eq('x = -5/2,   y = -15/2')
+        expect(json['real_roots'][2]).to eq('x = 5/2,   y = 15/2')
+        expect(json['real_roots'][3]).to eq('x = 15/2,   y = 5/2')
       end
     end
 
