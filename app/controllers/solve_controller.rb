@@ -79,6 +79,7 @@ class SolveController < ApplicationController
       complex_roots = nil
     end
     { error: false, real_roots: real_roots, complex_roots: complex_roots }
+
   end
 
 end
