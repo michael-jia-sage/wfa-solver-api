@@ -18,7 +18,7 @@ class SageController < ApplicationController
  end
 
   def ledger_entries
-    base_url = 'https://api.columbus.sage.com/ca/sageone/accounts/v3/ledger_entries'
+    base_url = 'https://api.columbus.sage.com/ca/sageone/accounts/v3/ledger_entries?items_per_page=200&attributes=all'
     response = RestClient.get(base_url, header)
     @response = JSON.parse(response.to_s)
     render json: @response
@@ -42,7 +42,7 @@ class SageController < ApplicationController
       "invoice_lines" => [
         {
           "description" => "testing wehat",
-          "ledger_account_id" => "ccc159a948ac11e8a8f11281a7acf536",
+          "ledger_account_id" => "7431af3648a311e8a8f11281a7acf536",
           "quantity" => 3,
           "unit_price" => 10
         }

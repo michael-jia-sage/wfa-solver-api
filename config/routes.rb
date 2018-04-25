@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :sage, only: [:index] do
     collection do
       get 'ledger_entries'
-      post 'invoices'
+      get 'invoices'
     end
     # get 'ledger_entries'
   end
