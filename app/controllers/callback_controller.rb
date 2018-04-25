@@ -32,6 +32,6 @@ class CallbackController < ApplicationController
       Rails.logger.debug("My object: #{response}")
       json = JSON.parse(response.body)
       Rails.logger.debug("My object: #{json}")
-      Token.create(token: json['access_token'], refresh_token: json['refresh_token'])
+      Token.create(token: json['access_token'], refresh_token: json['refresh_token'], resource_id: json['resource_owner_id'])
     end
   end

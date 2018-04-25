@@ -9,4 +9,10 @@ Rails.application.routes.draw do
     end
   end
   resources :auth, only: [:index]
+  resources :sage, only: [:index] do
+    collection do
+      get 'ledger_entries'
+    end
+    # get 'ledger_entries'
+  end
 end

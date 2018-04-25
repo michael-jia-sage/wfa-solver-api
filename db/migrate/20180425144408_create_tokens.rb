@@ -6,6 +6,7 @@ class CreateTokens < ActiveRecord::Migration[5.1]
       t.string  :code
       t.string  :scope
       t.string  :token_type
+      t.string  :resource_id
       t.datetime :expires_in
     end
   end

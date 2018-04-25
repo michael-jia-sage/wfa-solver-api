@@ -32,8 +32,10 @@ module WfaApi
     config.x.sage_client_id = 'f1e220f4838245bdc6c2'
     config.x.sage_client_secret = '2bbbad86e63274adba1028f119e377573e5c254c'
     config.x.sage_signing_secret = '1924ea90d4796aa31a1c8c10caf566d4f8eac7a9'
-    config.x.sage_token_url = 'https://api.sageone.com/oauth2/token'
-    config.x.app_callback_url = 'https://lyh-api.gameharbor.com.cn/callback'
-    config.x.sage_auth_url = 'https://www.sageone.com/oauth2/auth'
+    config.x.sage_token_url = 'https://oauth.na.sageone.com/token'
+    # config.x.app_callback_url = 'https://lyh-api.gameharbor.com.cn/callback'
+    config.x.app_callback_url = 'https://www.postly.com/callback'
+    config.x.sage_auth_url = 'https://www.sageone.com/oauth2/auth/central'
+    config.x.app_primary_key = '12e4a1d079f5407ea457184cc4d6c1ab'
   end
 end
