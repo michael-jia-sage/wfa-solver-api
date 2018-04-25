@@ -24,14 +24,30 @@ class SageController < ApplicationController
     render json: @response
   end
 
-  def invoice
-
+  def invoices
+    base_url = 'https://api.columbus.sage.com/ca/sageone/accounts/v3/sales_invoices'
+    data = invoice_pay_load
+    response = RestClient.post(base_url, data ,header)
+    @response = JSON.parse(response.to_s)
+    render json: @response
   end
 
 
   private
 
   def invoice_pay_load
+    {
+      "contact_id" => "64b278f848b811e8a8f11281a7acf536",
+      "date" => "2018-04-25",
+      "invoice_lines" => [
+        {
+          "description" => "testing wehat",
+          "ledger_account_id" => "ccc159a948ac11e8a8f11281a7acf536",
+          "quantity" => 3,
+          "unit_price" => 10
+        }
+      ]
+    }
   end
 
   def header
