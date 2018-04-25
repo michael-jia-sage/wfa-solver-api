@@ -5,4 +5,5 @@ end
 Rails.application.routes.draw do
   resources :caltest
   resources :solve
+  resources :callback, only: [:index]
 end
