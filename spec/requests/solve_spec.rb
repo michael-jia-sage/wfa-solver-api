@@ -67,5 +67,17 @@ RSpec.describe 'Solve API', type: :request do
       end
     end
 
+    #below spec is for real data testing purpose, feel free to play with different inputs
+    context 'when the requesting for a testing equation solving' do
+      let(:valid_attributes) { {"e1_left": "x^3", "e1_right": "-8", "e2_left": "   ", "e2_right": "    ", "e3_left": "     ", "e3_right": "      "} }
+      before { post '/solve', params: valid_attributes }
+
+      it 'returns correct results' do
+        expect(json['error']).to be_falsy
+        expect(json['real_roots'].count).to eq(1)
+        expect(json['complex_roots'].count).to eq(2)
+      end
+    end
+
   end
 end

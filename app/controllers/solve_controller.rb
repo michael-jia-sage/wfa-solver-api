@@ -30,8 +30,8 @@ class SolveController < ApplicationController
   end
 
   def euqations_input
-    e2 = params[:e2_left] ? ";#{params[:e2_left]}%3D#{get_param_value(:e2_right)}" : ""
-    e3 = params[:e3_left] ? ";#{params[:e3_left]}%3D#{get_param_value(:e3_right)}" : ""
+    e2 = params[:e2_left].blank? ? "" : ";#{params[:e2_left]}%3D#{get_param_value(:e2_right)}"
+    e3 = params[:e3_left].blank? ? "" : ";#{params[:e3_left]}%3D#{get_param_value(:e3_right)}"
     "#{params[:e1_left]}%3D#{get_param_value(:e1_right)}#{e2}#{e3}".gsub('+', '%2B')
   end
 
@@ -54,7 +54,7 @@ class SolveController < ApplicationController
   def res_body(response)
     hash_res = Hash.from_xml(response)
     qresult = hash_res["queryresult"]
-    error = qresult["error"] == 'true'
+    error = qresult["error"] == 'true' || qresult["success"] == 'false'
     return { error: true, message: qresult["message"] } if error
 
     solutions = qresult['pod'].find { |s| s['title'].include?('Solution') }
