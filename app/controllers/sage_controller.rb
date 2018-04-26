@@ -62,6 +62,7 @@ class SageController < ApplicationController
           "description" => "testing wehat",
           "ledger_account_id" => "7431af3648a311e8a8f11281a7acf536",
           "quantity" => 3,
+          "tax_rate_id" => "CA_GST_PST_BC_1",
           "unit_price" => 10
         }
       ],
