@@ -47,8 +47,7 @@ class SageController < ApplicationController
       {
       "contact_id" => "64b278f848b811e8a8f11281a7acf536",
       "date" => "2018-04-25",
-      "reference" => "ref test 001",
-      "notes" => "notes dsfdfs",
+      "due_date" => "2018-05-25",
       "invoice_lines" => [
         {
           "description" => "testing wehat",
@@ -57,7 +56,9 @@ class SageController < ApplicationController
           "unit_price" => 10
         }
       ]
-    }
+      "notes" => "notes dsfdfs",
+      "reference" => "ref test 001"
+     }
     }
   end
 
