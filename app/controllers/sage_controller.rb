@@ -43,9 +43,12 @@ class SageController < ApplicationController
   private
 
   def invoice_pay_load
-    {
+    {"sales_invoice" =>
+      {
       "contact_id" => "64b278f848b811e8a8f11281a7acf536",
       "date" => "2018-04-25",
+      "reference" => "ref test 001",
+      "notes" => "notes dsfdfs",
       "invoice_lines" => [
         {
           "description" => "testing wehat",
@@ -55,7 +58,27 @@ class SageController < ApplicationController
         }
       ]
     }
+    }
   end
+
+ # def invoice_payload
+ #   {
+ #       contact_id: "64b278f848b811e8a8f11281a7acf536",
+ #       reference: "Trx#: #{params["trans_id"]}",
+ #       date: params["date_time"],
+ #       notes: "Payment received from WeChat for #{params["memo"]}",
+ #       invoice_lines: [line_item_payload]
+ #   }
+ # end
+
+ def line_item_payload
+   {
+       description: params["memo"],
+       ledger_account_id: "ccc159a948ac11e8a8f11281a7acf536",
+       quantity: 1,
+       unit_price: params["amount"]
+   }
+ end
 
   def header
     {
