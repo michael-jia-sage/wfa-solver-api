@@ -24,6 +24,13 @@ class SageController < ApplicationController
     render json: @response
   end
 
+  def tax_rates
+    base_url = 'https://api.columbus.sage.com/ca/sageone/accounts/v3/tax_rates'
+    response = RestClient.get(base_url, header)
+    @response = JSON.parse(response.to_s)
+    render json: @response
+  end
+
   def invoices
     base_url = 'https://api.columbus.sage.com/ca/sageone/accounts/v3/sales_invoices'
     data = invoice_pay_load

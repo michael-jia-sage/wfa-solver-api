@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     collection do
       get 'ledger_entries'
       get 'invoices'
+      get 'tax_rates'
     end
     # get 'ledger_entries'
   end
