@@ -33,12 +33,11 @@ class SageController < ApplicationController
 
   def invoices
     base_url = 'https://api.columbus.sage.com/ca/sageone/accounts/v3/sales_invoices'
-    data = invoice_pay_load
-    response = RestClient.post(base_url, data ,header)
+    # data = invoice_pay_load
+    response = RestClient.get(base_url ,header)
     @response = JSON.parse(response.to_s)
     render json: @response
   end
-
 
   private
 
