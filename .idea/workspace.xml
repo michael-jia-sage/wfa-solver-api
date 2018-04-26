@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="393f4e45-ab69-4e9a-88ea-aeecc59d7fc0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sage_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sage_controller.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -54,8 +54,8 @@
       <file leaf-file-name="sage_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/sage_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="71" column="5" lean-forward="false" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+            <state relative-caret-position="269">
+              <caret line="34" column="98" lean-forward="false" selection-start-line="34" selection-start-column="98" selection-end-line="34" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -107,10 +107,10 @@
             <state relative-caret-position="291">
               <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
               <folding>
-                <marker date="1524697578301" expanded="true" signature="356:469" ph="##..." />
-                <marker date="1524697578301" expanded="true" signature="515:1709" ph=" ... end" />
-                <marker date="1524697578301" expanded="true" signature="535:1705" ph=" ... end" />
-                <marker date="1524697578301" expanded="true" signature="671:1138" ph="##..." />
+                <marker date="1524704481970" expanded="true" signature="356:469" ph="##..." />
+                <marker date="1524704481970" expanded="true" signature="515:1709" ph=" ... end" />
+                <marker date="1524704481970" expanded="true" signature="535:1705" ph=" ... end" />
+                <marker date="1524704481970" expanded="true" signature="671:1138" ph="##..." />
               </folding>
             </state>
           </provider>
@@ -649,10 +649,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54909000" />
+    <option name="totallyTimeSpent" value="54923000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="86" width="1378" height="704" extended-state="1" />
+    <frame x="24" y="86" width="1378" height="704" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31961077" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -725,10 +725,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1524697578301" expanded="true" signature="356:469" ph="##..." />
-            <marker date="1524697578301" expanded="true" signature="515:1709" ph=" ... end" />
-            <marker date="1524697578301" expanded="true" signature="535:1705" ph=" ... end" />
-            <marker date="1524697578301" expanded="true" signature="671:1138" ph="##..." />
+            <marker date="1524704481970" expanded="true" signature="356:469" ph="##..." />
+            <marker date="1524704481970" expanded="true" signature="515:1709" ph=" ... end" />
+            <marker date="1524704481970" expanded="true" signature="535:1705" ph=" ... end" />
+            <marker date="1524704481970" expanded="true" signature="671:1138" ph="##..." />
           </folding>
         </state>
       </provider>
@@ -788,10 +788,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1524697578301" expanded="true" signature="356:469" ph="##..." />
-            <marker date="1524697578301" expanded="true" signature="515:1709" ph=" ... end" />
-            <marker date="1524697578301" expanded="true" signature="535:1705" ph=" ... end" />
-            <marker date="1524697578301" expanded="true" signature="671:1138" ph="##..." />
+            <marker date="1524704481970" expanded="true" signature="356:469" ph="##..." />
+            <marker date="1524704481970" expanded="true" signature="515:1709" ph=" ... end" />
+            <marker date="1524704481970" expanded="true" signature="535:1705" ph=" ... end" />
+            <marker date="1524704481970" expanded="true" signature="671:1138" ph="##..." />
           </folding>
         </state>
       </provider>
@@ -1031,10 +1031,10 @@
         <state relative-caret-position="291">
           <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding>
-            <marker date="1524697578301" expanded="true" signature="356:469" ph="##..." />
-            <marker date="1524697578301" expanded="true" signature="515:1709" ph=" ... end" />
-            <marker date="1524697578301" expanded="true" signature="535:1705" ph=" ... end" />
-            <marker date="1524697578301" expanded="true" signature="671:1138" ph="##..." />
+            <marker date="1524704481970" expanded="true" signature="356:469" ph="##..." />
+            <marker date="1524704481970" expanded="true" signature="515:1709" ph=" ... end" />
+            <marker date="1524704481970" expanded="true" signature="535:1705" ph=" ... end" />
+            <marker date="1524704481970" expanded="true" signature="671:1138" ph="##..." />
           </folding>
         </state>
       </provider>
@@ -1067,8 +1067,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sage_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="71" column="5" lean-forward="false" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        <state relative-caret-position="269">
+          <caret line="34" column="98" lean-forward="false" selection-start-line="34" selection-start-column="98" selection-end-line="34" selection-end-column="98" />
           <folding />
         </state>
       </provider>
