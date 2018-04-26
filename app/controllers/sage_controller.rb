@@ -48,6 +48,15 @@ class SageController < ApplicationController
       "contact_id" => "64b278f848b811e8a8f11281a7acf536",
       "date" => "2018-04-25",
       "due_date" => "2018-05-25",
+      "main_address" => {
+        "address_line_1" => "A building",
+        "address_line_2" => "A street",
+        "city" => "A city",
+        "region" => "BC",
+        "postal_code" => "V5H4R3",
+        "country_id" => "CA"
+      },
+      "tax_address_region_id" => "CA-BC",
       "invoice_lines" => [
         {
           "description" => "testing wehat",
@@ -55,7 +64,7 @@ class SageController < ApplicationController
           "quantity" => 3,
           "unit_price" => 10
         }
-      ]
+      ],
       "notes" => "notes dsfdfs",
       "reference" => "ref test 001"
      }
